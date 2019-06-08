@@ -1,0 +1,70 @@
+/* 
+    Created on : Jun 7, 2019, 4:58:57 PM
+    Author     : Edson Kropniczki
+*/
+
+.mainheader {
+    font-size: 1.5em!important;
+    overflow: visible!important;
+    text-overflow: unset!important;
+    height: 3em;
+    line-height: 3em;
+}
+
+.mainheader a {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: .5em;
+}
+
+.mainheader img {
+    width:  64px;
+    height: 85px
+}
+
+#slide {
+    height: 20em;
+    max-width: 50em;
+    margin: auto;
+}
+
+.vintalogo {
+    float: left;
+    margin-right: 2em;
+}
+
+#slide .question {
+    padding: 1em;
+    font-size: 1.2em;
+    font-weight: bold;
+    color:  #555555;
+    text-align: justify;
+}
+
+#slide .btn {
+    width: 5em;
+    position: absolute;
+    right: 1em;
+    bottom: .5em;
+}
+
+#results_popup {
+    width: 25em;
+}
+
+#results_caption {
+    width: 24em;
+    margin: auto;
+    text-align: center;
+    padding: .5em;
+}
+
+#results_close {
+    width: 2em;
+    margin: auto;
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
+

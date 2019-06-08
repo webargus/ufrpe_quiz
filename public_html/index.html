@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>.:: UFRPE :: BSI 2019.1 :: Quiz ::.</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="js/images/brasao32.ico"/>
+        <link rel="stylesheet" href="js/jquery.mobile-1.4.5.min.css"/>
+        <link rel="stylesheet" href="css/main.css"/>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="js/questions.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+    </head>
+    <body>
+<div data-role="page">
+
+	<div data-role="header">
+ <h1 class="mainheader">
+     <a href="http://www.ufrpe.br/br" title="UFRPE">
+                <img src="js/images/brasao.png" alt="Brasão UFRPE"/>
+            </a>
+           UFRPE &hyphen; BSI 2019.1 &hyphen; Quiz</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+            <div id="slide" class="ui-body ui-body-a ui-corner-all">
+                <div class="vintalogo">
+                    <img src="js/images/5529080.png" alt="vinta"/>
+                </div>
+                <div class="question">
+                    Quiz sobre a palestra ministrada por 
+                    <a href="mailto:ximenes@vinta.com.br">Filipe Ximenes</a>, s&oacute;cio da 
+                    <a href="https://www.vinta.com.br">Vinta</a> em 25/04/2019
+                    para a turma do BSI 2019.1 da UFRPE.
+                </div>
+                <div id="choices" style="display: none;">
+                    <fieldset data-role="controlgroup">
+                        <input type="radio" name="radio_choice" id="radio_choice_0" value="0">
+                        <label id="label_choice_0" for="radio_choice_0"></label>
+                        <input type="radio" name="radio_choice" id="radio_choice_1" value="1">
+                        <label id="label_choice_1" for="radio_choice_1"></label>
+                        <input type="radio" name="radio_choice" id="radio_choice_2" value="2">
+                        <label id="label_choice_2" for="radio_choice_2"></label>
+                    </fieldset>
+                </div>
+                <div id="slide_btn" class="btn ui-btn ui-btn-a ui-btn-icon-right ui-icon-arrow-r">Iniciar</div>
+            </div>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+            <h4>&copy; Edson Kropniczki - 2019</h4>
+	</div><!-- /footer -->
+
+<!--    Results popup   -->
+      <div data-role="popup" id="results_popup" data-position-to="origin" data-transition="flip" data-theme="a">
+          <div class="ui-corner-top ui-header" data-theme="a"  data-role="header">
+              <h1 class="ui-title" role="heading" aria-level="1">
+                  Resultado
+              </h1>
+              <img src="js/images/brasao32.ico"  style="position: absolute; top: .25em; left: .25em;"/>
+              <a href="#" data-rel="back"  class="ui-btn ui-btn-a ui-corner-all ui-icon-delete  ui-btn-icon-notext ui-btn-right">
+                    Fechar
+              </a>
+          </div>
+<!--    contents    -->
+<div id="results">
+    <div id="results_caption"></div>
+    <div id="results_links"></div>
+</div>
+
+          <div id="results_close" class="ui-btn ui-btn-a ui-btn-icon-left ui-icon-check">OK</div>
+      </div>    <!--    end of results popup    -->
+</div><!-- /page -->
+
+    </body>
+</html>
