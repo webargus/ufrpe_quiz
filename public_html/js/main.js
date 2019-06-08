@@ -16,7 +16,7 @@ $(function() {
         var reset = function() {
             curr_slide = 0;
             errors = [];
-            $("#slide_btn").text("Próximo").off().on("click", nextSlide);
+            $("#slide_btn").text(decodeEntities("Pr&oacute;ximo")).off().on("click", nextSlide);
             nextSlide();
         };
         
@@ -40,7 +40,7 @@ $(function() {
                 $("#radio_choice_"+i).attr("checked", false).checkboxradio("refresh");
                 $("#label_choice_"+i).text(decodeEntities(questions[curr_slide].choices[i]));
             }
-            $("#choices").show(1000).attr("style", "display: -webkit-box;");
+            $("#choices").show(1000).attr("style", "display: flow-root;");
             curr_slide++;
             // rename slide button label if no more questions to ask
             if(curr_slide === questions.length) {
@@ -62,7 +62,7 @@ $(function() {
                 }));
                 return;
             }
-            list = $("<ul/>", {
+            var list = $("<ul/>", {
                 "data-role": "listview",
                 "data-inset": true,
                 "data-mini": true

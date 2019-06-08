@@ -3,8 +3,44 @@
     Author     : Edson Kropniczki
 */
 
+@media all and (max-width: 50em) {
+    #slide {
+        height: 25em!important;
+    }
+}
+
+@media all and (max-width: 45em) {
+    #slide {
+        height: 30em!important;
+    }
+}
+
+@media all and (max-width: 39em) {
+    
+    #slide{
+        height: 40em!important;
+    }
+    
+    .vintalogo {
+        float: none!important;
+        margin: auto;
+        text-align: center;
+    }
+}
+
+@media all and (max-width: 28em) {
+    
+    #slide {
+        height: 44em!important;
+    }
+   
+    .mainmainheader {
+        height: 7em!important;
+    }
+    
+}
+
 .mainheader {
-    font-size: 1.5em!important;
     overflow: visible!important;
     text-overflow: unset!important;
     height: 3em;
@@ -50,11 +86,11 @@
 }
 
 #results_popup {
-    width: 25em;
+    width: 18em;
 }
 
 #results_caption {
-    width: 24em;
+    width: 18em;
     margin: auto;
     text-align: center;
     padding: .5em;
@@ -62,7 +98,7 @@
 
 #results_links {
     margin: auto;
-    width: 23em;
+    width: 17em;
     text-align: center;
 }
 
