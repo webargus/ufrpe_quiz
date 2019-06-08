@@ -35,12 +35,12 @@ $(function() {
             // disable 'next' button, for user hasn't selected an answer yet
             $("#slide_btn").addClass("ui-disabled");
             $("#choices").hide();
-            $(".question").hide().text(decodeEntities(questions[curr_slide].question)).fadeIn(2000);
+            $(".question").hide().text(decodeEntities((curr_slide+1) + ". " +questions[curr_slide].question)).fadeIn(2000);
             for(var i = 0; i < questions[curr_slide].choices.length; i++) {
                 $("#radio_choice_"+i).attr("checked", false).checkboxradio("refresh");
                 $("#label_choice_"+i).text(decodeEntities(questions[curr_slide].choices[i]));
             }
-            $("#choices").show(1000);
+            $("#choices").show(1000).attr("style", "display: -webkit-box;");
             curr_slide++;
             // rename slide button label if no more questions to ask
             if(curr_slide === questions.length) {
@@ -64,7 +64,8 @@ $(function() {
             }
             list = $("<ul/>", {
                 "data-role": "listview",
-                "data-inset": true
+                "data-inset": true,
+                "data-mini": true
             });
             caption = decodeEntities(errors.length == 1 ? "Busque aqui a resposta correta:"
                                                                                    : "Busque aqui as respostas corretas:");
@@ -76,7 +77,7 @@ $(function() {
             for(var i = 0; i < errors.length; i++) {
                 list.append($("<li/>").append($("<a/>", {
                     href: questions[errors[i]].answerLocation[1],
-                    text: questions[errors[i]].answerLocation[0],
+                    text: decodeEntities(questions[errors[i]].answerLocation[0]),
                     target: "_blank"
                 })));
             }
