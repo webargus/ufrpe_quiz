@@ -60,6 +60,12 @@
     padding: .5em;
 }
 
+#results_links {
+    margin: auto;
+    width: 23em;
+    text-align: center;
+}
+
 #results_close {
     width: 2em;
     margin: auto;
@@ -67,4 +73,17 @@
     margin-bottom: .5em;
 }
 
+.congrats {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #444444;
+    text-align: center;
+    padding: .5em;
+    border: 2px dotted #444444;
+    width: 10em;
+    margin: auto;
+    margin-top: .5em;
+    margin-bottom: 1em;
+    border-radius: 10px;
+}
 

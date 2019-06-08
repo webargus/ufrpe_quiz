@@ -56,23 +56,28 @@ $(function() {
             popup.popup("open");
             $("#slide_btn").text("Reiniciar").off().on("click", reset);
             if(errors.length == 0) {
-                $("#results_links").empty().text(decodeEntities("Parab&eacute;ns!"));
+                $("#results_links").empty().html($("<div/>", {
+                    text: decodeEntities("Parab&eacute;ns!"),
+                    class: "congrats"
+                }));
                 return;
             }
             list = $("<ul/>", {
                 "data-role": "listview",
                 "data-inset": true
             });
-            caption = decodeEntities(errors.length == 1 ? "Busque aqui a resposta &agrave; pergunta que voc&ecirc; errou:"
-                                                                                   : "Busque aqui as respostas &agrave;s perguntas que voc&ecirc; errou:");
+            caption = decodeEntities(errors.length == 1 ? "Busque aqui a resposta correta:"
+                                                                                   : "Busque aqui as respostas corretas:");
             list.append($("<li/>", {
                 "data-role": "list-divider",
+                style: "text-align: center;",
                 text: caption
             }));
             for(var i = 0; i < errors.length; i++) {
                 list.append($("<li/>").append($("<a/>", {
                     href: questions[errors[i]].answerLocation[1],
-                    text: questions[errors[i]].answerLocation[0]
+                    text: questions[errors[i]].answerLocation[0],
+                    target: "_blank"
                 })));
             }
             $("#results_links").empty().append(list.listview());
