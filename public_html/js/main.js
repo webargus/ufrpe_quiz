@@ -23,11 +23,16 @@ $(function() {
         var nextSlide = function() {
             // check if previous answer was right
             if(curr_slide > 0) {
-               if(questions[curr_slide-1].correctAnswer != parseInt($("input[radio_choice]:checked").val())) {
+               if(questions[curr_slide-1].correctAnswer != parseInt($("input[name='radio_choice']:checked").val())) {
                    errors.push(curr_slide-1);
                }
             }
-            // disable 'next' button
+            // Show results and abort if no more questions to ask
+            if(curr_slide === questions.length) {
+                showResults();
+                return;
+            }
+            // disable 'next' button, for user hasn't selected an answer yet
             $("#slide_btn").addClass("ui-disabled");
             $("#choices").hide();
             $(".question").hide().text(decodeEntities(questions[curr_slide].question)).fadeIn(2000);
@@ -37,21 +42,40 @@ $(function() {
             }
             $("#choices").show(1000);
             curr_slide++;
-            if(curr_slide === questions.length)
-                endQuiz();
-        };
-        
-        var endQuiz = function() {
-            $("#slide_btn").text("Finalizar").off().on("click", showResults);
+            // rename slide button label if no more questions to ask
+            if(curr_slide === questions.length) {
+                $("#slide_btn").text("Finalizar");
+            }
         };
         
         var showResults = function() {
             var n = questions.length;
             console.log(errors);
-            var caption = decodeEntities("Voc&ecirc; acertou "+(n-errors.length)+" dentre  " + n + " quest&otilde;es");
+            var caption = decodeEntities("Voc&ecirc; acertou "+(n-errors.length)+" das  " + n + " quest&otilde;es");
             $("#results_caption").text(caption);
             popup.popup("open");
             $("#slide_btn").text("Reiniciar").off().on("click", reset);
+            if(errors.length == 0) {
+                $("#results_links").empty().text(decodeEntities("Parab&eacute;ns!"));
+                return;
+            }
+            list = $("<ul/>", {
+                "data-role": "listview",
+                "data-inset": true
+            });
+            caption = decodeEntities(errors.length == 1 ? "Busque aqui a resposta &agrave; pergunta que voc&ecirc; errou:"
+                                                                                   : "Busque aqui as respostas &agrave;s perguntas que voc&ecirc; errou:");
+            list.append($("<li/>", {
+                "data-role": "list-divider",
+                text: caption
+            }));
+            for(var i = 0; i < errors.length; i++) {
+                list.append($("<li/>").append($("<a/>", {
+                    href: questions[errors[i]].answerLocation[1],
+                    text: questions[errors[i]].answerLocation[0]
+                })));
+            }
+            $("#results_links").empty().append(list.listview());
         };
         
         var  decodeEntities = function(string) {
