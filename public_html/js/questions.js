@@ -62,10 +62,10 @@ var questions = [
      answerLocation: ["VINTA sobre minorias",
                                  "https://www.vinta.com.br/careers/"]
    },
-   { question: "Na pr&aacute;tica de desenvolvimento usando Python, devemos eleborar nosso c&oacute;digo:",
-     choices: ["Sempre a partir do zero, garantindo que temos dom&iacute;nio total sobre o c&oacute;digo desenvolvido",
+   { question: "Na pr&aacute;tica de desenvolvimento em Python, devemos elaborar nosso c&oacute;digo:",
+     choices: ["Sempre a partir do zero, garantindo dom&iacute;nio total sobre o c&oacute;digo",
                     "Sempre procurando usar os 'imports', evitando 'reinventar a roda'",
-                    "Sempre evitando usar 'Pip' ou 'Pipenv' para gerenciar os 'packages' do Python, pois podem conter v&iacute;rus"],
+                    "Sempre evitando usar 'Pip' ou 'Pipenv' para gerenciar os pacotes Python, para evitar v&iacute;rus"],
      correctAnswer: 1,
      answerLocation: ["Melhores pr&aacute;ticas",
                                  "https://realpython.com/tutorials/best-practices/"]
