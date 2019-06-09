@@ -34,17 +34,13 @@
         height: 44em!important;
     }
    
-    .mainmainheader {
-        height: 7em!important;
-    }
-    
 }
 
 .mainheader {
     overflow: visible!important;
     text-overflow: unset!important;
-    height: 3em;
-    line-height: 3em;
+    height: 5em;
+    line-height: 5em;
 }
 
 .mainheader a {
